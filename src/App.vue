@@ -1,9 +1,9 @@
 <script setup>
-import {NButton} from 'naive-ui'
+import BottomBar from "@/components/bottomBar.vue";
 </script>
 
 <template>
-  <n-button>naive-ui</n-button>
+  <bottom-bar></bottom-bar>
 </template>
 
 <style scoped>
