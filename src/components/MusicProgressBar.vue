@@ -1,7 +1,7 @@
 <template>
   <div class="music-progress-bar">
     <div class="progress" ref="progress" @click="handleClick">
-      <div class="thumb" ref="thumb" :style="{ left: thumbLeft }"></div>
+      <div class="thumb" ref="thumb" id="thumb" :style="{ left: thumbLeft }"></div>
     </div>
     <div class="time-info">
       <span class="current-time">{{ currentTime }}</span>
@@ -39,9 +39,6 @@ export default {
       if (!progress.value) return "0";
       return `${(props.currentTime / props.duration) * progress.value.clientWidth}px`;
     });
-    console.log(
-        'progress',thumb
-    );
     function formatTime(time) {
       const minutes = Math.floor(time / 60)
           .toString()
@@ -97,6 +94,7 @@ export default {
       currentTime,
       totalTime,
       thumbLeft,
+      handleClick
     };
   },
 };

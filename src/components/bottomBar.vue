@@ -1,11 +1,10 @@
 <script setup>
 import {NIcon} from "naive-ui";
-import {NProgress} from "naive-ui";
 import MusicProgressBar from "@/components/MusicProgressBar.vue";
 </script>
 <template>
   <div class="bottom-bar">
-    <audio ref="audio" :src="audioUrl" @timeupdate="handleTimeUpdate"></audio>
+    <audio ref="audio" src="/Luv.mp3" @timeupdate="handleTimeUpdate"></audio>
     <MusicProgressBar :currentTime="currentTime" :duration="duration" :on-seek="onSeek"></MusicProgressBar>
     <!--    上一首-->
     <div class="buttons">
@@ -87,7 +86,6 @@ export default {
       progress: 0,
       playFlag: false,
       percentage: 20,
-      audioUrl: "your-audio-url.mp3",
       currentTime: 10,
       duration: 250
 
